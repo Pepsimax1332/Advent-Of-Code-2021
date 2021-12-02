@@ -26,7 +26,7 @@ def task(list: List[int], win_size: int=1) -> int:
 
 if __name__ == "__main__":
     print(f"Solution to day 1 test task 1: {task(test_data)}")
-    print(f"Solution to day 1 real task 1: {task(data)}")
+    print(f"Solution to day 1 real task 1: {task(data, 1)}")
 
     print(f"Solution to day 1 test task 2: {task(test_data, 3)}")
     print(f"Solution to day 1 real task 2: {task(data, 3)}")
