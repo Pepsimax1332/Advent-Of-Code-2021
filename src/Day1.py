@@ -17,7 +17,7 @@ test = """199
 
 test_data = list(map(int, test.splitlines()))
 with open(FILEPATH, "r") as f:
-    data = list(map(int, f.readlines()))
+    data = list(map(int, f.readlines())).copy()
 
 
 def task(list: List[int], win_size: int=1) -> int:
