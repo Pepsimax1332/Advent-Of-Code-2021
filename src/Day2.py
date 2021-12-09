@@ -11,7 +11,7 @@ forward 2"""
 
 test_data = test.splitlines()
 with open(FILEPATH, "r") as f:
-    data = list(f.readlines()).copy()
+    data = f.readlines()
 
 def task_one(data):
     dic = {}

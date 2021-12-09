@@ -19,7 +19,7 @@ test = """00100
 test_data = list(map(lambda x: int(x, 2), test.splitlines()))
 
 with open(FILEPATH, "r") as f:
-    data = list(map(lambda x: int(x, 2), f.readlines()))
+    data = [int(x, 2) for x in f.readlines()]
 
 
 def task_one(data, bit_len=5):
@@ -41,8 +41,8 @@ def task_one(data, bit_len=5):
 
 def task_two(data, bit_len=5):
 
-    o2 = filter_scrubbers(set(data), bit_len, lambda x, y: x <= y)
-    co2 = filter_scrubbers(set(data), bit_len, lambda x, y: x > y)
+    o2 = filter_scrubbers(set(data), bit_len, int.__le__)
+    co2 = filter_scrubbers(set(data), bit_len, int.__gt__)
 
     return o2 * co2
 
@@ -51,12 +51,11 @@ def filter_scrubbers(data, bit_len, func):
 
     for bit_index in range(bit_len-1, -1, -1):
 
-        lead_1 = set(filter(lambda x: (x & (1 << bit_index)) == 1 << bit_index, data))
+        lead_1 = set(filter(lambda x: x & (1 << bit_index) == 1 << bit_index, data))
         lead_0 = data - lead_1
 
         if func(len(lead_0), len(lead_1)):
             data = lead_1
-
         else:
             data = lead_0
 
