@@ -2,7 +2,6 @@ from pathlib import Path
 
 FILEPATH = f"{Path()}/data/day5.txt"
 
-
 test = """0,9 -> 5,9
 8,0 -> 0,8
 9,4 -> 3,4
@@ -85,6 +84,7 @@ def task_two(data):
     
     return len(list(filter(lambda x: x > 1, sum(map, []))))
 
+
 def max_coords(data):
 
     max_x, max_y = 0, 0
@@ -99,8 +99,8 @@ def max_coords(data):
 
 
 if __name__ == "__main__":
-    print(f"Solution to day 4 test task 1: {task_one(test_data)}")
-    print(f"Solution to day 4 real task 1: {task_one(data)}")
-    print(f"Solution to day 4 test task 2: {task_two(test_data)}")
-    print(f"Solution to day 4 real task 2: {task_two(data)}")
+    print(f"Solution to day 5 test task 1: {task_one(test_data)}")
+    print(f"Solution to day 5 real task 1: {task_one(data)}")
+    print(f"Solution to day 5 test task 2: {task_two(test_data)}")
+    print(f"Solution to day 5 real task 2: {task_two(data)}")
 

@@ -23,3 +23,10 @@ python -m timeit -n 1_000 -r 5 -s 'import src.Day4 as day4' 'day4.Bingo(day4.dat
 echo "Time taken for results for day 4 task 2:"
 python -m timeit -n 1_000 -r 5 -s 'import src.Day4 as day4' 'day4.Bingo(day4.data).last_win()'
 echo ""
+
+
+echo "Time taken for results for day 5 task 1:"
+python -m timeit -n 10 -r 5 -s 'import src.Day5 as day5' 'day5.task_one(day5.data)'
+echo "Time taken for results for day 5 task 2:"
+python -m timeit -n 10 -r 5 -s 'import src.Day5 as day5' 'day5.task_two(day5.data)'
+echo ""
