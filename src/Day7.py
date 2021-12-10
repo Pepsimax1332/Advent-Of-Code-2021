@@ -8,35 +8,20 @@ test_data = list(map(int, test.split(",")))
 
 with open(FILEPATH, "r") as f:
     data = list(map(int, f.read().split(",")))
+    
 
 def task_one(data):
 
-    distance = lambda x, p: abs(x-p)
-    range_ = max(data)
+    fuel_burn = lambda x, p: abs(x-p)
 
-    min_fuel = 2 ** 63
-
-    for i in range(range_):
-        fuel = sum(map(lambda x: distance(x, i), data))
-        if fuel < min_fuel:
-            min_fuel = fuel
-
-    return min_fuel
+    return min([sum(fuel_burn(x, i) for x in data) for i in range(max(data))])
 
 
 def task_two(data):
 
-    distance = lambda x, p: abs(x-p)*(abs(x-p) + 1)//2
-    range_ = max(data)
+    fuel_burn = lambda x, p: abs(x-p)*(abs(x-p) + 1)//2
 
-    min_fuel = 2 ** 63
-
-    for i in range(range_):
-        fuel = sum(map(lambda x: distance(x, i), data))
-        if fuel < min_fuel:
-            min_fuel = fuel
-
-    return min_fuel
+    return min([sum(fuel_burn(x, i) for x in data) for i in range(max(data))])
 
 
 if __name__ == "__main__":
