@@ -1,7 +1,5 @@
 from pathlib import Path
 
-from Day5 import task_two
-
 FILEPATH = f"{Path()}/data/day6.txt"
 
 test = """3,4,3,1,2"""

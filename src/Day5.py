@@ -101,6 +101,7 @@ def max_coords(data):
 if __name__ == "__main__":
     print(f"Solution to day 5 test task 1: {task_one(test_data)}")
     print(f"Solution to day 5 real task 1: {task_one(data)}")
+    
     print(f"Solution to day 5 test task 2: {task_two(test_data)}")
     print(f"Solution to day 5 real task 2: {task_two(data)}")
 
